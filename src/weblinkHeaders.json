@@ -1,0 +1,18 @@
+[
+    {
+        "category": "Socials",
+        "order": 0
+    },
+    {
+        "category": "AniManga",
+        "order": 1
+    },
+    {
+        "category": "Manhwa",
+        "order": 2
+    },
+    {
+        "category": "Learn",
+        "order": 3
+    }
+]

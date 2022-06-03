@@ -1,0 +1,72 @@
+[
+    {
+        "id": "reaperscans",
+        "name": "ReaperScans",
+        "url": "https://reaperscans.com/",
+        "category": "Manhwa",
+        "order": 2
+    },
+    {
+        "id": "reddit",
+        "name": "Reddit",
+        "url": "https://reddit.com/",
+        "category": "Socials",
+        "order": 0
+    },
+    {
+        "id": "youtube",
+        "name": "Youtube",
+        "url": "https://youtube.com/",
+        "category": "Socials",
+        "order": 1
+    },
+    {
+        "id": "twitchtv",
+        "name": "TwitchTV",
+        "url": "https://twitch.tv/",
+        "category": "Socials",
+        "order": 2
+    },
+    {
+        "id": "twitter",
+        "name": "Twitter",
+        "url": "https://twitter.com/",
+        "category": "Socials",
+        "order": 3
+    },
+    {
+        "id": "mscsharpdocs",
+        "name": "MS C# Documentation",
+        "url": "https://docs.microsoft.com/en-us/dotnet/csharp",
+        "category": "Learn",
+        "order": 0
+    },
+    {
+        "id": "unitydocs",
+        "name": "Unity Documentation",
+        "url": "https://docs.unity.com/",
+        "category": "Learn",
+        "order": 1
+    },
+    {
+        "id": "nyaa",
+        "name": "Nyaa",
+        "url": "https://nyaa.si/",
+        "category": "AniManga",
+        "order": 1
+    },
+    {
+        "id": "pixiv",
+        "name": "Pixiv",
+        "url": "https://pixiv.net/",
+        "category": "AniManga",
+        "order": 2
+    },
+    {
+        "id": "nineanime",
+        "name": "9anime",
+        "url": "https://9anime.to/home",
+        "category": "AniManga",
+        "order": 0
+    }
+]
