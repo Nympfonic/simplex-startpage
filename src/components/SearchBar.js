@@ -8,13 +8,7 @@ export default function SearchBar() {
   const validInputs = [
     { command: "/", action: () => console.warn("Invalid command.") },
     { command: "/ping", action: () => alert("Pong") },
-    { command: "/s", action: () => {
-      if (searchInput.length > 3) {
-        const url = searchInput.trim().slice(2, searchInput.length - 1);
-        if (isValidUrl(url))
-          searchEngineQuery(url);
-        else console.warn("Invalid URL.");
-      }}}
+    { command: "/s", action: () => searchAction() }
   ];
 
   // -- Handler function --
@@ -25,8 +19,8 @@ export default function SearchBar() {
   };
 
   // -- Handler function --
-  // Handles Enter key press
-  const handleEnter = (e) => {
+  // Handles key press
+  const handleKeyPress = (e) => {
     if (searchInput.length > 0 &&
       e.key === "Enter") {
       if (searchInput.startsWith('/')) {
@@ -35,32 +29,39 @@ export default function SearchBar() {
         var link = searchInput;
         if (!searchInput.startsWith("http"))
           link = "https://" + searchInput;
-        window.open(link);
+        window.open(link, "_self");
       }
     }
   };
 
-  const searchEngineQuery = (input) => {
-    var baseUrl = "https://duckduckgo.com/?t=vivaldi&q=";
-    var completeUrl = baseUrl + encodeURIComponent(input);
-    window.open(completeUrl);
-  }
-
   const runCommand = () => {
+    const si = searchInput.split(" ");
     var cmd = validInputs.filter((input) => {
-      const regex = new RegExp("^" + searchInput + "$");
-      return input.command.match(regex);
+      return input.command.match(si[0]);
     });
     if (cmd.length > 0) {
       cmd[0].action();
     }
-  }
+  };
+
+  const searchAction = () => {
+    if (searchInput.length > 3) {
+      const query = searchInput.slice(3, searchInput.length);
+      searchEngineQuery(query);
+    }
+  };
+
+  const searchEngineQuery = (input) => {
+    const baseUrl = "https://duckduckgo.com/?t=vivaldi&q=";
+    const completeUrl = baseUrl + encodeURIComponent(input);
+    window.open(completeUrl, "_self");
+  };
 
   const isValidUrl = (value) => {
-    var exp = /[-a-zA-Z0-9@:%_+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_+.~#?&//=]*)?/gi;
-    var regexp = new RegExp(exp);
+    const exp = /[-a-zA-Z0-9@:%_+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_+.~#?&//=]*)?/gi;
+    const regexp = new RegExp(exp);
     return regexp.test(value);
-  }
+  };
 
   return (
     <section id="searchbar" className="searchbar">
@@ -68,7 +69,7 @@ export default function SearchBar() {
         type="text"
         placeholder=""
         onChange={handleChange}
-        onKeyDown={handleEnter}
+        onKeyDown={handleKeyPress}
         value={searchInput}
         id="searchbar-input" />
     </section>

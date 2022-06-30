@@ -68,5 +68,12 @@
         "url": "https://9anime.to/home",
         "category": "AniManga",
         "order": 0
+    },
+    {
+        "id": "fabricdocs",
+        "name": "Fabric Documentation",
+        "url": "https://fabricmc.net/wiki/doku.php",
+        "category": "Learn",
+        "order": 2
     }
 ]
